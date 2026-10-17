@@ -13,7 +13,7 @@ This repository defines authoritative, normative standards, architecture decisio
 - Favor automation, repeatability, and infrastructure-as-code.
 - Released artifacts are derived, reproducible delivery outputs, not sources of truth.
 
-See the core ADRs below for normative statements. AI-domain architecture decisions are maintained in [FlossWare/loom-ai](https://github.com/FlossWare/loom-ai). The knowledge corpus is maintained separately in [FlossWare/axium](https://github.com/FlossWare/axium).
+See the core ADRs below for normative statements. AI-domain architecture decisions are maintained in [FlossWare/loom-ai](https://github.com/FlossWare/loom-ai). The knowledge corpus is maintained separately in [FlossWare/knowledge](https://github.com/FlossWare/knowledge).
 
 ## Architecture Decisions
 
