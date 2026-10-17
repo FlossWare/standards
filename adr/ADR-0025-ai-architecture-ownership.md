@@ -24,7 +24,7 @@ The loom-ai repository is authoritative for AI-domain meaning; language-specific
 
 ## Consequences
 
-- Generic engineering standards remain reusable outside Loom.
+- FlossWare-wide standards remain reusable outside Loom.
 - AI architecture evolves with the AI-domain contract rather than accumulating in a generic repository.
 - Cross-repository references are explicit and ownership is unambiguous.
 - Historical AI ADRs retain their substance in the Loom repository while standards no longer acts as a competing authority.
