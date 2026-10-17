@@ -176,9 +176,9 @@ Repositories with other architectural roles SHALL be named for their purpose, no
 | Repository | Role | Naming principle |
 | --- | --- | --- |
 | [`standards`](https://github.com/FlossWare/standards) | Normative standards and organization-wide rules | Name the repository for the authority and scope of its rules. |
-| [`axium`](https://github.com/FlossWare/axium) | Canonical, non-code knowledge corpus | Name the corpus for its role; do not append an authoring tool such as Obsidian or an implementation language. |
+| [`knowledge`](https://github.com/FlossWare/knowledge) | Canonical, non-code knowledge corpus | Name the corpus for its role; do not append an authoring tool such as Obsidian or an implementation language. |
 | `loom` and its contract-family repositories | Software contracts and implementations | Apply the contract/domain/language patterns defined by this ADR. |
 
-Standards prescribe what projects SHALL or SHOULD do. Axium records and connects knowledge, decisions, research, and provenance. These roles are distinct: neither repository is a software implementation, and Axium does not replace normative standards.
+Standards prescribe what projects SHALL or SHOULD do. Knowledge records and connects knowledge, decisions, research, and provenance. These roles are distinct: neither repository is a software implementation, and Knowledge does not replace normative standards.
 
 Repository names SHALL communicate the repository's primary architectural role. The authoring application, hosting platform, or storage mechanism SHALL NOT determine the name unless that technology is itself the repository's purpose.
