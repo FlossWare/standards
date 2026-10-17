@@ -165,3 +165,20 @@ Rejected. The purpose of this decision is to establish one reusable FlossWare co
 ## Notes
 
 This ADR defines repository architecture and naming. Individual contract repositories remain authoritative for their own normative contract semantics, while implementation repositories remain authoritative for their language-specific realization.
+
+
+## Non-contract repository names
+
+This ADR governs repositories whose boundaries are defined by contracts, domain specializations, or implementations. It does not define the names of every FlossWare repository.
+
+Repositories with other architectural roles SHALL be named for their purpose, not forced into the contract-family suffix pattern:
+
+| Repository | Role | Naming principle |
+| --- | --- | --- |
+| [`standards`](https://github.com/FlossWare/standards) | Normative standards and organization-wide rules | Name the repository for the authority and scope of its rules. |
+| [`axium`](https://github.com/FlossWare/axium) | Canonical, non-code knowledge corpus | Name the corpus for its role; do not append an authoring tool such as Obsidian or an implementation language. |
+| `loom` and its contract-family repositories | Software contracts and implementations | Apply the contract/domain/language patterns defined by this ADR. |
+
+Standards prescribe what projects SHALL or SHOULD do. Axium records and connects knowledge, decisions, research, and provenance. These roles are distinct: neither repository is a software implementation, and Axium does not replace normative standards.
+
+Repository names SHALL communicate the repository's primary architectural role. The authoring application, hosting platform, or storage mechanism SHALL NOT determine the name unless that technology is itself the repository's purpose.
