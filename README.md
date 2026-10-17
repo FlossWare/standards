@@ -1,6 +1,6 @@
-# FlossWare Engineering Standards
+# FlossWare Standards
 
-This repository defines shared engineering standards, architecture decisions, and development conventions for the FlossWare ecosystem.
+This repository defines authoritative, normative standards, architecture decisions, and development conventions that apply across the FlossWare ecosystem. Its scope is broader than engineering alone.
 
 ## Core Principles
 
@@ -13,7 +13,7 @@ This repository defines shared engineering standards, architecture decisions, an
 - Favor automation, repeatability, and infrastructure-as-code.
 - Released artifacts are derived, reproducible delivery outputs, not sources of truth.
 
-See the core ADRs below for normative statements. AI-domain architecture decisions are maintained in FlossWare/loom-ai.
+See the core ADRs below for normative statements. AI-domain architecture decisions are maintained in [FlossWare/loom-ai](https://github.com/FlossWare/loom-ai). The knowledge corpus is maintained separately in [FlossWare/axium](https://github.com/FlossWare/axium).
 
 ## Architecture Decisions
 
