@@ -1,7 +1,7 @@
 # ADR-0024: Contract-Centric Repository Layering and Naming
 
 ## Status
-Proposed
+Accepted
 
 ## Date
 2026-09-17
@@ -116,6 +116,8 @@ Python is therefore not special. It is one implementation language among peers.
 A two-segment name of the form `{contract}-{language}` is reserved for a language implementation. Domain names SHOULD avoid colliding with language identifiers. If a domain identifier would create an ambiguous repository name, the repository SHALL use an explicit domain-qualified naming form rather than relying on positional guesswork.
 
 Repository names SHALL continue to follow the FlossWare lowercase kebab-case convention.
+
+Repository names and distribution/import identifiers serve different purposes and MUST NOT be assumed to match. A repository rename does not automatically rename a published package, Maven artifact, Python import package, or public API. Those identifiers SHOULD align when practical, but any change must account for compatibility, release, and migration requirements. Documentation must state the canonical repository name and accurately identify any intentionally retained legacy artifact/import names.
 
 The suffixes in this ADR encode architectural role. They are not arbitrary project tags.
 
