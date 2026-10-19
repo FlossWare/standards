@@ -36,11 +36,11 @@ Architecture decisions are documented as ADRs under [`adr/`](adr/).
 | [ADR-0025](adr/ADR-0025-ai-architecture-ownership.md) | AI Architecture Ownership |
 | [ADR-0026](adr/ADR-0026-two-component-release-versioning.md) | Two-Component Release Versioning |
 | [ADR-0027](adr/ADR-0027-versioning-tagging-and-releases.md) | Versioning, Tagging, and Releases |
-
 | [ADR-0028](adr/ADR-0028-standalone-ai-components.md) | Standalone AI Components |
 | [ADR-0029](adr/ADR-0029-agent-runtime-identity-and-profile-separation.md) | Agent Runtime Identity and Profile Separation |
 | [ADR-0030](adr/ADR-0030-provider-credential-and-model-policy-isolation.md) | Provider Credential and Model Policy Isolation |
 | [ADR-0031](adr/ADR-0031-rest-representation-contracts-and-api-evolution.md) | REST Representation Contracts and API Evolution |
+| [ADR-0032](adr/ADR-0032-language-neutral-multi-protocol-service-contracts.md) | Language-Neutral Multi-Protocol Service Contracts (Proposed) |
 
 New ADRs SHOULD use [`adr/TEMPLATE.md`](adr/TEMPLATE.md).
 
