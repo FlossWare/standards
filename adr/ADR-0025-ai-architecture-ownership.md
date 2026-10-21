@@ -8,31 +8,31 @@ Accepted
 
 ## Context
 
-FlossWare previously stored AI-specific architecture decisions in the generic engineering-standards repository. As the AI architecture has become a coherent domain with its own contracts, execution model, providers, evaluation, routing, consensus, and learning concerns, those decisions need a domain-owned architectural home.
+FlossWare previously stored AI-specific architecture decisions in the generic standards repository. As the AI architecture has become a coherent domain with its own contracts, execution model, providers, evaluation, routing, consensus, and learning concerns, those decisions need a domain-owned architectural home.
 
 ## Decision
 
-Generic engineering principles and FlossWare-wide infrastructure decisions SHALL remain in this repository.
+Generic and FlossWare-wide normative standards and infrastructure decisions SHALL remain in this repository.
 
 AI-domain contracts and AI-specific architecture decisions SHALL be maintained by FlossWare/loom-ai.
 
 The Loom AI ADR set includes provider abstraction, execution topology, model inventory and selection, token budgets, MCP and agent capability semantics, consensus, and durable/shared intelligence.
 
-Engineering standards MAY define generic principles that apply to AI systems, but SHALL NOT duplicate or redefine Loom AI domain semantics.
+Standards MAY define generic principles that apply to AI systems, but SHALL NOT duplicate or redefine Loom AI domain semantics.
 
 The loom-ai repository is authoritative for AI-domain meaning; language-specific implementations remain in the corresponding implementation repositories.
 
 ## Consequences
 
-- Generic engineering standards remain reusable outside Loom.
+- FlossWare-wide standards remain reusable outside Loom.
 - AI architecture evolves with the AI-domain contract rather than accumulating in a generic repository.
 - Cross-repository references are explicit and ownership is unambiguous.
-- Historical AI ADRs retain their substance in the Loom repository while engineering-standards no longer acts as a competing authority.
+- Historical AI ADRs retain their substance in the Loom repository while standards no longer acts as a competing authority.
 
 ## Alternatives Considered
 
-### Keep AI ADRs in engineering-standards
-Rejected because the generic repository would continue accumulating domain-specific architecture.
+### Keep AI ADRs in standards
+Rejected because the generic standards repository would continue accumulating domain-specific architecture.
 
 ### Duplicate AI ADRs in both repositories
 Rejected because duplicated normative decisions inevitably diverge.
