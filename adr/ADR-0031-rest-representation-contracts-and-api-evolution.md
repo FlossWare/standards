@@ -67,6 +67,34 @@ This ADR applies to FlossWare-owned REST/HTTP APIs and their clients, including 
 - Migration plans SHALL be incremental and SHALL preserve current behavior unless a separately documented breaking change is approved.
 - This ADR is a proposed organization-wide standard until accepted through the repository's ADR process.
 
+## Adoption Tracking (2026-10-09)
+
+This section records implementation status; it does not change the decision's **Proposed** status.
+
+### Current sequence
+
+1. **Claude Ensemble first:** validate the representation-contract approach against a real gateway and its clients before generalizing it.
+2. **Loom second:** apply the lessons to HTTP bindings only. Loom's core contracts remain transport-neutral.
+3. **Other FlossWare APIs later:** inventory and adopt incrementally as they are audited or changed.
+
+### Initial Claude Ensemble slice
+
+- Tracking issue: [claude-ensemble#334](https://github.com/FlossWare/claude-ensemble/issues/334)
+- Initial implementation PR: [claude-ensemble#335](https://github.com/FlossWare/claude-ensemble/pull/335)
+- The PR introduces opt-in RFC 9457 Problem Details for gateway-generated errors when a client includes `application/problem+json` in `Accept`.
+- Existing `/api/v1/` paths, success representations, and default JSON error envelopes are preserved.
+- This is an initial compatibility experiment, **not** evidence that all CE gateway routes or independently hosted services conform yet. The PR must pass checks and review before merge; forwarded-response handling and the Graph/Memory service boundaries still require separate audits.
+
+### Loom follow-on
+
+- Tracking issue: [FlossWare/loom#25](https://github.com/FlossWare/loom/issues/25)
+- The intended outcome is a language-neutral conformance specification for HTTP bindings, not HTTP-specific requirements in Loom core.
+
+### Ecosystem inventory
+
+- Tracking issue: [engineering-standards#50](https://github.com/FlossWare/engineering-standards/issues/50)
+- The inventory is deliberately broader than the immediate implementation sequence. CE remains first; Loom follows after the CE lessons are reviewed.
+
 ## Consequences
 
 ### Positive
