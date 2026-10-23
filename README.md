@@ -42,6 +42,7 @@ Architecture decisions are documented as ADRs under [`adr/`](adr/).
 | [ADR-0031](adr/ADR-0031-rest-representation-contracts-and-api-evolution.md) | REST Representation Contracts and API Evolution |
 | [ADR-0032](adr/ADR-0032-language-neutral-multi-protocol-service-contracts.md) | Language-Neutral Multi-Protocol Service Contracts (Proposed) |
 | [ADR-0033](adr/ADR-0033-composable-and-decoratable-contract-implementations.md) | Composable and Decoratable Contract Implementations (Proposed) |
+| [ADR-0034](adr/ADR-0034-capability-contracts-and-deployment-boundaries.md) | Capability Contracts and Deployment Boundaries (Proposed) |
 
 New ADRs SHOULD use [`adr/TEMPLATE.md`](adr/TEMPLATE.md).
 
@@ -74,5 +75,5 @@ All ADRs should include:
 RFC 2119 keywords are used consistently:
 
 - SHALL / SHALL NOT: mandatory requirements (MUST is treated as equivalent to SHALL)
-- SHOULD / SHOULD NOT: strong recommendation
+- SHOULD / SHOULD NOT: strong recommendation; deviations need justification
 - MAY: optional behavior
