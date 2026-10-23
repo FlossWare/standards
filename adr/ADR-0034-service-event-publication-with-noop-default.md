@@ -10,7 +10,7 @@ Proposed
 
 FlossWare services need to support future event-driven consumers without requiring those consumers to repeatedly enumerate and query all stored data. A service should be able to announce meaningful state changes, such as a memory record being created, updated, or deleted, so downstream components can react incrementally.
 
-This does not mean deploying a broker or requiring a standalone network messaging service now. Services SHOULD use the shared FlossWare/messaging contract for publication and envelopes rather than inventing service-specific publisher interfaces. That contract must offer a no-op implementation (and may offer an in-process implementation) so services invoke publication consistently even when no transport is configured.
+This does not mean deploying a broker or requiring a standalone network messaging service now. Services SHOULD use the shared FlossWare/messaging contract for publication and envelopes rather than inventing service-specific publisher interfaces. Publication is fire-and-forget: the producer does not wait for consumers or downstream processing. The shared contract must offer a no-op implementation so services invoke publication consistently even when no transport is configured.
 
 This decision complements ADR-0005, which describes event-driven integration and delivery guarantees, and ADR-0001, which requires cross-cutting behavior to be explicitly opted into.
 
@@ -52,7 +52,7 @@ Applies to FlossWare service contracts and service implementations that create, 
 ### Negative
 - Event schemas become part of the service's public compatibility surface.
 - Consumers must handle duplicates, missed events, and eventual consistency.
-- A no-op publisher provides no delivery or notification guarantee; it only establishes the call boundary.
+- A no-op publisher provides no delivery or notification guarantee; it only establishes the call boundary. Fire-and-forget likewise does not imply durable handoff or successful receipt.
 - Durable publication may later require an outbox, retries, monitoring, and operational ownership.
 
 ## Alternatives Considered
