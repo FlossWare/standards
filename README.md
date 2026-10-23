@@ -42,6 +42,7 @@ Architecture decisions are documented as ADRs under [`adr/`](adr/).
 | [ADR-0031](adr/ADR-0031-rest-representation-contracts-and-api-evolution.md) | REST Representation Contracts and API Evolution |
 | [ADR-0032](adr/ADR-0032-language-neutral-multi-protocol-service-contracts.md) | Language-Neutral Multi-Protocol Service Contracts (Proposed) |
 | [ADR-0033](adr/ADR-0033-composable-and-decoratable-contract-implementations.md) | Composable and Decoratable Contract Implementations (Proposed) |
+| [ADR-0034](adr/ADR-0034-service-event-publication-with-noop-default.md) | Service Event Publication with a No-Op Default (Proposed) |
 
 New ADRs SHOULD use [`adr/TEMPLATE.md`](adr/TEMPLATE.md).
 
