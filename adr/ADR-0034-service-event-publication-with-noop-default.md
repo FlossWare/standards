@@ -10,7 +10,7 @@ Proposed
 
 FlossWare services need to support future event-driven consumers without requiring those consumers to repeatedly enumerate and query all stored data. A service should be able to announce meaningful state changes, such as a memory record being created, updated, or deleted, so downstream components can react incrementally.
 
-This does not mean introducing a messaging platform or requiring a broker now. A service can depend on a small publication contract whose default implementation is a no-op. The service still publishes through that contract; deployments can later configure a real publisher without rewriting domain operations.
+This does not mean deploying a broker or requiring a standalone network messaging service now. Services SHOULD use the shared FlossWare/messaging contract for publication and envelopes rather than inventing service-specific publisher interfaces. That contract must offer a no-op implementation (and may offer an in-process implementation) so services invoke publication consistently even when no transport is configured.
 
 This decision complements ADR-0005, which describes event-driven integration and delivery guarantees, and ADR-0001, which requires cross-cutting behavior to be explicitly opted into.
 
@@ -20,7 +20,7 @@ Applies to FlossWare service contracts and service implementations that create, 
 
 ## Non-goals
 
-- Does not require deploying, implementing, or operating a messaging broker or messaging service now.
+- Does not require deploying or operating a messaging broker or standalone network messaging service now.
 - Does not define a universal broker, wire protocol, transport, or consumer framework.
 - Does not make event delivery a replacement for resource APIs, full enumeration, export, or reconciliation.
 - Does not require every internal computation or read operation to emit an event.
@@ -28,9 +28,9 @@ Applies to FlossWare service contracts and service implementations that create, 
 
 ## Decision
 
-- Every FlossWare service that changes domain state SHALL define meaningful domain events and invoke a publication port after the relevant state transition succeeds.
-- The publication port SHALL be a small contract independent of any specific messaging technology. A no-op implementation SHALL be available and SHALL be usable as the default when event delivery is not configured.
-- Domain code SHALL publish through the port even when the configured implementation is no-op. Domain code SHALL NOT contain broker-specific conditionals or require a deployed messaging service merely to perform its core operation.
+- Every FlossWare service that changes domain state SHALL define meaningful domain events and publish them through the shared FlossWare/messaging contract after the relevant state transition succeeds.
+- The shared messaging contract SHALL provide a no-op publisher. An in-process implementation MAY be used where useful; neither requires a broker or standalone network service.
+- Services SHALL NOT invent incompatible local event envelopes or publisher interfaces when the shared contract can express the need. Domain code SHALL publish through the contract even when its configured implementation is no-op, and SHALL NOT contain broker-specific conditionals.
 - Events SHOULD describe facts that have already occurred, using past-tense names such as `memory.record.created`, `memory.record.updated`, and `memory.record.deleted`. Event names and payloads SHALL be domain-specific, documented, and evolvable.
 - Event envelopes SHOULD include a unique event ID, event type, envelope version, occurrence time, producer/service identity, aggregate or resource ID, and a schema-defined payload. They SHOULD carry enough information for consumers to identify and fetch the changed resource, while avoiding unnecessary duplication of large or sensitive content.
 - Events SHALL identify the changed resource and its revision/version where the domain supports versioning. Consumers SHALL be able to distinguish repeated delivery of the same event from distinct changes.
@@ -69,6 +69,7 @@ Rejected because it makes publication an invasive retrofit across service implem
 ## Related ADRs
 - [ADR-0001](ADR-0001-explicit-opt-in-cross-cutting-behavior.md) — Explicit Opt-In Cross-Cutting Behavior
 - [ADR-0005](ADR-0005-event-driven-internal-bus.md) — Event Driven Internal Bus
+- [FlossWare/messaging](https://github.com/FlossWare/messaging) — Shared messaging contract and pluggable transports
 - [ADR-0006](ADR-0006-cross-cutting-decorators.md) — Cross-Cutting Decorators
 - [ADR-0010](ADR-0010-rest-service-boundaries.md) — REST Service Boundaries and Integration
 - [ADR-0031](ADR-0031-rest-representation-contracts-and-api-evolution.md) — REST Representation Contracts and API Evolution
